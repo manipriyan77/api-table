@@ -1,7 +1,6 @@
 import React from "react";
-import { usePagination, DOTS } from "./Pagination";
+import { DOTS, usePagination } from "./Pagination";
 import styles from "./Pagination.module.css";
-import Button from "react-bootstrap/Button";
 
 const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, pageSize }) => {
   const paginationRange = usePagination({
@@ -34,9 +33,7 @@ const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, p
             : styles.pagination_item
         }
         onClick={onPrevious}
-      >
-        {/* <Button className={styles.left}>Previous</Button> */}
-      </li>
+      ></li>
       {paginationRange.map((pageNumber) => {
         if (pageNumber === DOTS) {
           return (
@@ -69,9 +66,7 @@ const Pagination = ({ onPageChange, totalCount, siblingCount = 1, currentPage, p
             : styles.pagination_item
         }
         onClick={onNext}
-      >
-        {/* <Button className={styles.right}> Next </Button> */}
-      </li>
+      ></li>
     </ul>
   );
 };
